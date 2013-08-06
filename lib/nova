@@ -659,6 +659,10 @@ function install_nova() {
                 install_package kvm
                 install_package libvirt
                 install_package libvirt-python
+            elif is_mageia; then
+                install_package kvm
+                install_package libvirt-utils
+                install_package python-libvirt
             else
                 exit_distro_not_supported "libvirt installation"
             fi
