@@ -11,5 +11,3 @@ python-sqlite2
 python-urllib3
 python-webob
 sqlite-tools
-
-# Deps installed via pip for RHEL
