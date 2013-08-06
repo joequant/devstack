@@ -494,6 +494,8 @@ function start_cinder() {
             sudo /sbin/service --skip-redirect tgtd restart
         elif is_suse; then
             restart_service tgtd
+        elif is_mageia; then
+            restart_service tgtd
         else
             # note for other distros: unstack.sh also uses the tgt/tgtd service
             # name, and would need to be adjusted too
