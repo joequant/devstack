@@ -412,7 +412,7 @@ function init_cinder() {
         create_cinder_volume_group
 
         if sudo vgs $VOLUME_GROUP; then
-            if is_fedora || is_suse; then
+            if is_fedora || is_suse || is_mageia; then
                 # service is not started by default
                 start_service tgtd
             fi
