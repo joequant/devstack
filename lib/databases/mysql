@@ -23,7 +23,7 @@ function cleanup_database_mysql {
         sudo aptitude purge -y ~nmysql-server
         sudo rm -rf /var/lib/mysql
         return
-    elif is_fedora; then
+    elif is_fedora || is_mageia; then
         MYSQL=mysqld
     elif is_suse; then
         MYSQL=mysql
@@ -60,7 +60,7 @@ function configure_database_mysql {
     fi
 
     # Start mysql-server
-    if is_fedora || is_suse; then
+    if is_fedora || is_suse || is_mageia; then
         # service is not started by default
         start_service $MYSQL
     fi
