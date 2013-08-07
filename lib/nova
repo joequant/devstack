@@ -299,7 +299,7 @@ EOF
                 LIBVIRT_DAEMON=libvirtd
             fi
 
-            if is_fedora || is_suse; then
+            if is_fedora || is_suse || is_mageia; then
                 if is_fedora && [[ $DISTRO =~ (rhel6) || "$os_RELEASE" -le "17" ]]; then
                     sudo bash -c "cat <<EOF >/etc/polkit-1/localauthority/50-local.d/50-libvirt-remote-access.pkla
 [libvirt Management Access]
