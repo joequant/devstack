@@ -136,7 +136,7 @@ function init_horizon() {
         # WSGI isn't enabled by default, enable it
         sudo a2enmod wsgi
     elif is_mageia; then
-        echo
+        HORIZON_REQUIRE='Require all granted'
     else
         exit_distro_not_supported "apache configuration"
     fi
