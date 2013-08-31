@@ -1,3 +1,4 @@
+python-backports-ssl_match_hostname
 python-greenlet
 python-lxml         #dist:f16,f17,f18,f19
 python-paste        #dist:f16,f17,f18,f19
@@ -7,6 +8,7 @@ python-routes
 python-setuptools   #dist:f16,f17,f18,f19
 python-sqlalchemy
 python-sqlite2
+python-urllib3
 python-webob
 sqlite-tools
 
