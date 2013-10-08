@@ -980,7 +980,7 @@ function uninstall_package() {
     elif is_suse; then
         sudo zypper rm "$@"
     elif is_mageia; then
-        sudo urpme "$@"
+        sudo urpme "$@" || echo "urpme failed"
     else
         exit_distro_not_supported "uninstalling packages"
     fi
