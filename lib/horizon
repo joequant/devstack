@@ -129,6 +129,8 @@ function init_horizon() {
         sudo sed '/^Listen/s/^.*$/Listen 0.0.0.0:80/' -i /etc/httpd/conf/httpd.conf
     elif is_suse; then
         : # nothing to do
+    elif is_mageia; then
+        HORIZON_REQUIRE='Require all granted'
     else
         exit_distro_not_supported "horizon apache configuration"
     fi
@@ -152,7 +154,6 @@ function init_horizon() {
 function install_horizon() {
     # Apache installation, because we mark it NOPRIME
     install_apache_wsgi
-
     git_clone $HORIZON_REPO $HORIZON_DIR $HORIZON_BRANCH $HORIZON_TAG
 }
 
