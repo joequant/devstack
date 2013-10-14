@@ -53,7 +53,7 @@ EOF
         LIBVIRT_DAEMON=libvirtd
     fi
 
-    if is_fedora || is_suse; then
+    if is_fedora || is_suse || is_mageia; then
         if is_fedora && [[ $DISTRO =~ (rhel6) || "$os_RELEASE" -le "17" ]]; then
             sudo bash -c "cat <<EOF >/etc/polkit-1/localauthority/50-local.d/50-libvirt-remote-access.pkla
 [libvirt Management Access]
@@ -127,6 +127,10 @@ function install_nova_hypervisor() {
         install_package kvm
         install_package libvirt
         install_package libvirt-python
+    elif is_mageia ; then
+        install_package qemu
+        install_package libvirt
+        install_package python-libvirt
     fi
 
     # Install and configure **LXC** if specified.  LXC is another approach to
